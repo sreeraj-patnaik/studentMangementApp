@@ -1,109 +1,272 @@
-Person 1 — Core System & User Management
-Apps
-accounts/
-students/
-faculty/
-Responsibilities
-Accounts
-Custom User Model
-Authentication
-Login/Logout
-User Roles
+Student Management System — Work Division (2 People)
+Person 1 — Users & Administration Module
+Django App
+users/
+Objective
+
+Manage all people in the system and authentication.
+
+Module 1: Authentication
+Features
+Login
+Logout
+Change Password
+Reset Password
+Session Management
+Tasks
+Configure Django Authentication
+Create Login View
+Create Logout View
+Create Role-Based Access
+Roles
 Admin
 Faculty
 Student
-Students
-Student CRUD
-Student Search
-Student Profiles
-Faculty
-Faculty CRUD
-Faculty Assignment
+Module 2: Student Management
+Features
+Add Student
+View Student
+Edit Student
+Delete Student
+Search Student
+Student Fields
+Roll Number
+First Name
+Last Name
+Email
+Phone Number
+Date of Birth
+Gender
+Department
+Year
+Address
+Photo
+Tasks
 Models
-User
-Student
-Faculty
-APIs
-/api/login/
-/api/logout/
 
-/api/students/
-/api/students/<id>/
+Create Student model.
 
-/api/faculty/
-/api/faculty/<id>/
-Deliverables
-Models
 Views
+student_list()
+student_detail()
+student_create()
+student_update()
+student_delete()
 URLs
-Forms/Serializers
-Unit Tests
-Person 2 — Academic System
-Apps
-courses/
-attendance/
-marks/
-dashboard/
-Responsibilities
-Courses
-Create Course
-Update Course
+/students/
+/students/add/
+/students/<id>/
+/students/edit/
+/students/delete/
+Module 3: Faculty Management
+Features
+Add Faculty
+Edit Faculty
+Delete Faculty
+View Faculty
+Faculty Fields
+Faculty ID
+Name
+Email
+Phone
+Department
+Designation
+Qualification
+Experience
+Tasks
+Models
+
+Faculty model.
+
+Views
+faculty_list()
+faculty_create()
+faculty_update()
+faculty_delete()
+Module 4: Profile Management
+Features
+Student
+View Profile
+Edit Own Profile
+Faculty
+View Profile
+Edit Own Profile
+Admin
+View All Profiles
+Module 5: Admin Controls
+Features
+Manage Users
+Activate Accounts
+Deactivate Accounts
+Assign Roles
+Dashboard Data
+
+Provide APIs:
+
+Total Students
+Total Faculty
+Total Users
+Person 2 — Academic Management Module
+Django App
+academics/
+Module 1: Course Management
+Features
+Add Course
+Edit Course
+Delete Course
 Assign Faculty
-Attendance
-Mark Attendance
-Attendance Reports
-Attendance Percentage
-Marks
-Add Marks
-Update Marks
-Grade Calculation
-Dashboard
-Statistics APIs
-Reports APIs
+Course Fields
+Course Code
+Course Name
+Credits
+Semester
+Faculty Assigned
+Tasks
 Models
 Course
-Attendance
-Marks
-APIs
-/ api/courses/
-/ api/attendance/
-/ api/marks/
-/ api/dashboard/
-Deliverables
-Models
 Views
-URLs
-Unit Tests
-Report Logic
-Shared Responsibilities
-Database Design
+course_list()
+course_create()
+course_update()
+course_delete()
+Module 2: Attendance Management
+Features
+Mark Attendance
+Update Attendance
+View Attendance
+Attendance Reports
+Attendance Fields
+Student
+Course
+Date
+Status
+Status
+Present
+Absent
+Tasks
+Models
+Attendance
+Logic
 
-Both must agree on relationships before coding.
+Calculate:
 
+Attendance % =
+(Present Classes / Total Classes) × 100
+Module 3: Marks Management
+Features
+Add Marks
+Update Marks
+View Marks
+Generate Results
+Fields
+Student
+Course
+Internal Marks
+External Marks
+Total Marks
+Grade
+Grade Logic
+90-100 = A+
+80-89 = A
+70-79 = B
+60-69 = C
+Below 60 = F
+Tasks
+Models
+Marks
+Business Logic
+
+Auto-calculate:
+
+Total Marks
+Grade
+Pass/Fail
+Module 4: Reports
+Attendance Reports
+Student Attendance
+Course Attendance
+Monthly Attendance
+Academic Reports
+Student Result
+Course Result
+Semester Result
+Module 5: Dashboard
+Admin Dashboard
+
+Show:
+
+Total Courses
+Total Attendance Records
+Total Marks Records
+Average Attendance
+Faculty Dashboard
+
+Show:
+
+Assigned Courses
+Students Count
+Attendance Summary
+Student Dashboard
+
+Show:
+
+Attendance %
+Marks
+Grades
+Current Courses
+Shared Database Relationships
 User
+│
 ├── Student
+│
 └── Faculty
 
 Faculty
+│
 └── Course
 
 Student
+│
 ├── Attendance
+│
 └── Marks
 
 Course
+│
 ├── Attendance
+│
 └── Marks
-Git Branches
-Person 1
-feature/accounts
-feature/students
-feature/faculty
-Person 2
-feature/courses
-feature/attendance
-feature/marks
-feature/dashboard
-Integration
-develop
-main
+Minimum Deliverables From Each Person
+
+For every feature:
+
+Model
+models.py
+View
+views.py
+URL
+urls.py
+Form
+forms.py
+Admin Registration
+admin.py
+Test Cases
+tests.py
+Documentation
+README update
+API documentation
+Project Completion Checklist
+ Authentication works
+ Student CRUD works
+ Faculty CRUD works
+ Course CRUD works
+ Attendance works
+ Marks works
+ Reports work
+ Dashboard works
+ Admin panel configured
+ Unit tests written
+ API documentation completed
+ Frontend integration completed later
+
+This gives each person roughly half of the backend while keeping responsibilities clearly separated.
