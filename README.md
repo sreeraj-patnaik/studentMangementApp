@@ -1,6 +1,6 @@
 # Student Management System (SMS)
 
-## Overview
+## Overview --
 
 The Student Management System (SMS) is a full-stack web application built with Django that centralizes student, faculty, attendance, course, and academic records management.
 
